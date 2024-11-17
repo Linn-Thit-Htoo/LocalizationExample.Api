@@ -1,3 +1,4 @@
+using LocalizationExample.Api.Validators;
 using Microsoft.AspNetCore.Localization;
 using System.Globalization;
 
@@ -10,6 +11,7 @@ builder.Services.AddLocalization(options => options.ResourcesPath = "Resources")
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<UserValidator>();
 
 var app = builder.Build();
 

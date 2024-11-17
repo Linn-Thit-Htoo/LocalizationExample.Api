@@ -1,21 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Remove="Resources\Controllers\UserController.en-US.resx" />
-  </ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Remove="Resources\Controllers\UserController.en-US.resx" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Include="Resources\Controllers\UserController.en-US.resx" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="Resources\Controllers\UserController.en-US.resx" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="FluentValidation" Version="11.11.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+	</ItemGroup>
 
 </Project>
