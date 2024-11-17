@@ -21,7 +21,7 @@ namespace LocalizationExample.Api.Controllers
         {
             if (string.IsNullOrEmpty(requestModel.UserName))
             {
-                string errorMessage = _localizer["UserName"].Value;
+                string errorMessage = _localizer["UserName", "Test Parameter"].Value;
                 return BadRequest(errorMessage);
             }
 
