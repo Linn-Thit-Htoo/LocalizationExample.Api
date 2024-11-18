@@ -1,5 +1,5 @@
-﻿using FluentValidation;
-using LocalizationExample.Api.Controllers;
+﻿global using FluentValidation;
+global using LocalizationExample.Api.Controllers;
 
 namespace LocalizationExample.Api.Validators;
 
