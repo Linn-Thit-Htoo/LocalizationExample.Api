@@ -1,5 +1,5 @@
-using Microsoft.AspNetCore.Localization;
-using System.Globalization;
+global using Microsoft.AspNetCore.Localization;
+global using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
