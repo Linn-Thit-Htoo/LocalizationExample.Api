@@ -1,7 +1,4 @@
-﻿global using FluentValidation;
-global using LocalizationExample.Api.Controllers;
-
-namespace LocalizationExample.Api.Validators;
+﻿namespace LocalizationExample.Api.Validators;
 
 public class UserValidator : AbstractValidator<UserRequestModel>
 {
