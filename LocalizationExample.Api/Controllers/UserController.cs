@@ -1,7 +1,7 @@
-﻿using LocalizationExample.Api.Models;
-using LocalizationExample.Api.Validators;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Localization;
+﻿global using LocalizationExample.Api.Models;
+global using LocalizationExample.Api.Validators;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.Extensions.Localization;
 
 namespace LocalizationExample.Api.Controllers;
 
