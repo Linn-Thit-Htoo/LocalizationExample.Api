@@ -1,7 +1,5 @@
 ﻿using FluentValidation;
 using LocalizationExample.Api.Controllers;
-using LocalizationExample.Api.Models;
-using Microsoft.Extensions.Localization;
 
 namespace LocalizationExample.Api.Validators;
 
