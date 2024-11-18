@@ -1,4 +1,3 @@
-using LocalizationExample.Api.Validators;
 using Microsoft.AspNetCore.Localization;
 using System.Globalization;
 
