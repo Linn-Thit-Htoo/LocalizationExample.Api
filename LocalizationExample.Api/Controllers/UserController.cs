@@ -1,9 +1,4 @@
-﻿global using LocalizationExample.Api.Models;
-global using LocalizationExample.Api.Validators;
-global using Microsoft.AspNetCore.Mvc;
-global using Microsoft.Extensions.Localization;
-
-namespace LocalizationExample.Api.Controllers;
+﻿namespace LocalizationExample.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
