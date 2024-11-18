@@ -8,10 +8,11 @@ builder.Services.AddScoped<UserValidator>();
 
 var app = builder.Build();
 
-var cultures = new List<CultureInfo> {
+var cultures = new List<CultureInfo>
+{
     new CultureInfo("en"),
     new CultureInfo("fr"),
-    new CultureInfo("my-MM")
+    new CultureInfo("my-MM"),
 };
 
 app.UseRequestLocalization(options =>
