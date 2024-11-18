@@ -3,32 +3,31 @@ using LocalizationExample.Api.Validators;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 
-namespace LocalizationExample.Api.Controllers
+namespace LocalizationExample.Api.Controllers;
+
+[Route("api/[controller]")]
+[ApiController]
+public class UserController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class UserController : ControllerBase
+    internal readonly IStringLocalizer<UserController> _localizer;
+    internal readonly UserValidator _validator;
+
+    public UserController(IStringLocalizer<UserController> localizer, UserValidator validator)
     {
-        internal readonly IStringLocalizer<UserController> _localizer;
-        internal readonly UserValidator _validator;
+        _localizer = localizer;
+        _validator = validator;
+    }
 
-        public UserController(IStringLocalizer<UserController> localizer, UserValidator validator)
+    [HttpPost]
+    public async Task<IActionResult> SignUpAsync(UserRequestModel requestModel)
+    {
+        var validationResult = await _validator.ValidateAsync(requestModel);
+        if (!validationResult.IsValid)
         {
-            _localizer = localizer;
-            _validator = validator;
+            string error = _localizer["UserNameNotEmpty"].Value;
+            string errors = string.Join(" ", validationResult.Errors.Select(x => x.ErrorMessage));
+            return BadRequest(errors);
         }
-
-        [HttpPost]
-        public async Task<IActionResult> SignUpAsync(UserRequestModel requestModel)
-        {
-            var validationResult = await _validator.ValidateAsync(requestModel);
-            if (!validationResult.IsValid)
-            {
-                string error = _localizer["UserNameNotEmpty"].Value;
-                string errors = string.Join(" ", validationResult.Errors.Select(x => x.ErrorMessage));
-                return BadRequest(errors);
-            }
-            return Ok();
-        }
+        return Ok();
     }
 }
